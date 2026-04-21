@@ -75,14 +75,30 @@
 
 ---
 
-## 產出檔案
+### 6. 數據與文獻查證 (NotebookLM Verification)
+
+在提案階段，透過 NotebookLM 針對「智慧停車位預測」進行了外部文獻與數據的二次驗證，結果如下：
+
+#### 一、 交通痛點數據驗證
+- **數據吻合**：學術文獻支持「尋找車位（Cruising for parking）」平均花費 3-15 分鐘，且會增加 25%-40% 的車流量。簡報引用的 **8-12 分鐘** 與 **30% 壅塞比例** 具有高度真實性。
+
+#### 二、 TDX 資料實務驗證
+- **資料雜訊**：開發者論壇證實 TDX API 偶爾會出現「剩餘車位 > 總車位」的邏輯異常。這強化了系統架構中 **Layer 2 Preprocessing (資料清洗)** 的必要性與專業性。
+
+#### 三、 技術架構 (DD-LSTM) 之合理性
+- **外部特徵重要性**：文獻 (Arjona et al., 2019) 證實「天氣因素」與「日曆效應」對停車行為有顯著影響，支持了 DD-LSTM 融合多特徵的設計。
+- **輕量化價值**：雖然 GCNN 等模型能處理空間關聯，但運算資源消耗巨大。對於即時應用而言，採用專注於多特徵時序的 **輕量化 LSTM** 是更具落地價值的決策。
+
+---
+
+## 產出檔案 (Updated)
 
 | 檔案 | 說明 |
 |------|------|
-| `Parking Prediction Deck.html` | 主要簡報（HTML，含動畫與連結） |
-| `Parking_Prediction_Deck.pptx` | 匯出版本（PowerPoint 可編輯） |
-| `deck-stage.js` | 簡報引擎元件 |
-| `對話紀錄.md` | 本檔案 |
+| `docs/Smart_Parking_Prediction.pdf` | 精美簡報 (經 NotebookLM 優化) |
+| `docs/蝚砌蝯roject_proposal.pptx` | 原始設計簡報 |
+| `docs/CONVERSATION.md` | 本完整對話紀錄 |
+| `README.md` | 專業專案說明頁面 |
 
 ---
 
