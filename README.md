@@ -56,8 +56,8 @@
 ```text
 .
 ├── docs/
-│   ├── Smart_Parking_Prediction.pdf   # Optimized Slide Deck (via NotebookLM)
-│   ├── Group2_Project_Proposal.pptx   # Original Design (via Claude Design)
+│   ├── project proposal第二組.pdf   # Optimized Slide Deck (via NotebookLM)
+│   ├── 第二組proposal.pptx   # Original Design (via Claude Design)
 │   └── DEVELOPMENT_LOG.md             # Development History & Data Verification
 ├── src/                               # Source Code (In Development)
 ├── data/                              # Sample Data & Scripts (In Development)
